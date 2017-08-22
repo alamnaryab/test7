@@ -1,0 +1,19 @@
+<div class="row section news">
+	<div class="col-xs-12 col-lg-12">
+	<h1><i class="fa fa-newspaper-o"></i> Hot News</h1>
+	<div class="list-group news-wrapper">
+		<div data-ng-repeat="newz in news" class="list-group-item news-item">					
+			<span class="news-date small mute">{{newz.date | myDate}}</span>
+			<a href="#/news/{{$index}}" >
+				<img alt="news image" 
+				class="pull-left radius3 newDefultImg"
+				ng-if="newz.media.length>0"
+				ng-src="{{newz.media[0].type==1?newz.media[0].url:newz.media[0].vthumb}}" />
+				{{newz.title}}{{news.media}}
+			</a>
+			
+		</div>				
+	</div>
+		
+	</div>
+</div>

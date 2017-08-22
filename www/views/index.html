@@ -1,0 +1,19 @@
+<input type="text" 
+	ng-model="txt" 
+	class="form-control" 
+	placeholder="Filter video"
+	style="margin-top:15px;" />
+<div class="row">
+	<div class="loading text-center radius5" ng-show="loading">
+		<img src="img/processing.gif" /> <span>Loading...</span>
+	</div><!--.loading-->
+	
+	<div ng-show="!loading" ng-repeat="vid in videos | filter:txt" class="col-xs-6 col-sm-3 col-md-2">
+		<a ng-href="#/video/{{$index}}" class="vthumb-link thumbnail"> 
+			<div class="text-center vtitle">{{vid.title}}</div>
+			<div class="vthumb">
+				<img class="img-responsive" ng-src="{{vid.vthumb}}" />		
+			</div>	
+		</a>			
+	</div>
+</div>

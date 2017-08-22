@@ -1,0 +1,107 @@
+/********
+General
+********/
+.no-padding-top{padding-top:0px;}
+.no-padding-right{padding-right:0px;}
+.no-padding-bottom{padding-bottom:0px;}
+.no-padding-left{padding-left:0px;}
+.no-padding{padding:0px;}
+
+.no-margin-top{margin-top:0px;}
+.no-margin-right{margin-right:0px;}
+.no-margin-bottom{margin-bottom:0px;}
+.no-margin-left{margin-left:0px;}
+.no-margin{margin:0px;}
+
+.radius3{ border-radius: 3px; -mox-border-radius: 3px; -webkit-border-radius: 3px; -o-border-radius: 3px; }
+.radius5{ border-radius: 5px; -mox-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; }
+.radius10{ border-radius: 10px; -mox-border-radius: 10px; -webkit-border-radius: 10px; -o-border-radius: 10px; }
+.no-radius{ border-radius: 0px; -mox-border-radius: 0px; -webkit-border-radius: 0px; -o-border-radius: 0px; }
+
+/********
+Nav
+********/
+body{background:#EEE;}
+
+.logo-link{padding:10px 10px 0 10px; }
+.logo-link span{
+	color: #faff24;
+    font-weight: bold;
+    font-size: 30px;
+    display: inline-block;
+    line-height: 1em;
+    position: relative;
+    top: 10px;
+}
+.logo-img{max-height:45px;background:#FFF;}
+.navbar-toggle {
+	margin-top: 4px;
+    margin-bottom: 1px;
+}
+
+
+
+/********
+Page-area
+********/
+
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 Aspect Ratio */ 
+	height: 0;
+	​width: 100%; /* You can set this width to whatever suits your needs */     
+	margin: 0 auto 20px auto;
+	z-index:8;
+}
+.video-container iframe,
+.video-container object,
+.video-container video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;  
+	height: 100%;
+	background:#000;
+	z-index:9;
+}
+video::-internal-media-controls-download-button {display:none;}
+video::-webkit-media-controls-enclosure {overflow:hidden;}
+video::-webkit-media-controls-panel {width: calc(100% + 30px);}
+
+@media (min-width: 450px) and (max-width: 767px){
+	div.col-xs-6{
+		width:33%;
+	}
+	
+}
+
+.vthumb-link{
+	height: 30vw;
+    margin: 10px auto;
+    display: inline-block;
+    overflow: hidden;
+}
+.vthumb-link .vtitle{
+	overflow: hidden;
+    position: relative;
+    height: 1.5em;
+}
+.loading {
+    font-size: 30px;
+    border: 1px solid #CCC;
+    margin: 15px;
+    background: #FFF;
+    padding: 10px;
+}
+.loading img {
+    width: 29vw;
+}
+.page-wrapper{
+	min-height:500px;
+}
+.footer{
+	background:#333;
+	padding:10px;
+	color:#FFF:
+}

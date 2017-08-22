@@ -1,0 +1,17 @@
+<div class="row section videos">
+	<div class="col-xs-12 col-lg-12">
+		<h1>
+			<i class="fa fa-film"></i> Videos
+		</h1>
+		<div class="row">
+			<div data-ng-repeat="video in videos" class="col-xs-6 col-sm-4 col-md-3  collg-3 vid-wrapper">
+				<a href="#/video/{{$index}}">
+					<div class="photo thumbnail">
+						<img alt="video" ng-src="{{video.vthumb}}" class="img-responsive" />
+					</div>
+				</a>
+			</div>
+		</div>
+		
+	</div>
+</div>

@@ -1,0 +1,19 @@
+<div class="row section images">
+	<div class="col-xs-12 col-lg-12">
+		<h1>
+			<i class="fa fa-picture-o"></i> Images
+		</h1>
+		<div class="row">
+			<div data-ng-repeat="img in images" ng-if="$index<6" class="col-xs-6 col-sm-4 col-md-3  col-lg-3">
+				<div class="photo thumbnail">
+					<a href="{{img.url}}" class="swipebox" ng-title="{{img.title}}" >
+						<img alt="image" ng-src="{{img.url}}" class="img-responsive" />
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="text-center">
+			<a ng-href="#/images/0/{{limit}}" class="btn btn-success btn-xs">View All Images</a>
+		</div>
+	</div>
+</div>

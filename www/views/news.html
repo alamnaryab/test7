@@ -1,0 +1,30 @@
+<div class="row section newz">
+	<div class="col-xs-12 col-lg-12">
+	<h1><i class="fa fa-newspaper-o"></i> News Detail</h1>
+	<div class="newz-item radius3">
+		<p class="news-title">{{newz.title}}</p>
+		<p class="news-content" ng-bind-html="newz.content | nl2br"></p>
+	</div>
+	
+	<div class="navz" ng-bind-html="newsNavs() | h"></div>
+
+	<div class="tags" ng-bind-html="makeTags(video.tags) | h"></div>
+	
+	<div class="row news-detail-media" ng-if="newz.media.length>0">
+		<div ng-repeat="media in newz.media">
+			<div class="video-container"
+				ng-if="media.type==2"
+				ng-bind-html="media.vframe.replace('autoplay=1','autoplay=0') | h"></div>
+		
+			<img class="img-responsive thumbnail"
+				ng-if="media.type==1"
+				ng-src="{{media.url}}" />
+		</div>
+		
+	</div>
+	<div class="navz" ng-bind-html="newsNavs() | h"></div>
+
+	
+	
+	</div>
+</div>

@@ -1,0 +1,11 @@
+<div class="section videos">
+	<h2>
+		<i class="fa fa-videospaper-o"></i> Hot videoss
+	</h2>
+	<div class="row">
+		<div data-ng-repeat="video in videos" class="col-xs-4">
+			<div class="video-container"  ng-bind-html="video.vframe | h"></div>
+		</div>
+	</div>
+	<a href="#/videos" class="btn btn-success btn-xs">View All videos</a>
+</div>

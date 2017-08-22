@@ -1,0 +1,18 @@
+<div class="row section video">
+	<div class="col-xs-12 col-lg-12">
+		<h4 class="text-center">
+			{{video.title}}
+		</h4>
+		
+		<div class="tags" ng-bind-html="makeTags(video.tags) | h"></div>
+		<br>
+		<div class="row">
+			<div class="video-container"  ng-bind-html="video.vframe | h"></div>				
+		</div>
+		
+		<div class="navz" ng-bind-html="videoNavs() | h"></div>
+
+		
+		
+	</div>
+</div>
