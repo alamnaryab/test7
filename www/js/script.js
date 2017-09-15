@@ -66,7 +66,8 @@ app.controller('myCtrl', function ($scope,$http,$location,$route,$routeParams) {
 				if(msg == ''){
 					msg = 'Untitled';
 				}
-				if(typeof d.attachments.data.type !== 'undefined' && d.attachments.data.type!='video_share_youtube'){
+				var isYt = d.source.indexOf('youtube');				
+				if(isYt<0){
 					$scope.tmp_videos.push({
 						'vframe': '<iframe src="'+d.source+'&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>',
 						'title':msg,
@@ -95,7 +96,7 @@ app.controller('myCtrl', function ($scope,$http,$location,$route,$routeParams) {
 			});
 		}
 		window.scrollTo(0, 0);//on view change scroll to top
-		$scope.intad();	
+		//$scope.intad();	
 		
 	});
 	
