@@ -21,7 +21,7 @@ app.controller('myCtrl', function ($scope,$http,$location,$route,$routeParams) {
     
     //set loading variable (is ajax running?)
 	$scope.at = 'EAABmSZBW6IbkBAPWVQOr9hwgrWxaObgOvqFUJYKoELeUg8MZCmVFlvQP4rnF2vay3BQM9wzUXTjkbQ4Ri5VdunhMscvr19vmUCYkqtLsPXEuYlwuqtrf729CFaLB4iknNlNm4UpdUwrmfNMOv61gsy32uPBS8ZD';
-	$scope.gid = '333023490381184';
+	$scope.gid = '810517042300154';
 	$scope.qs = '?fields=message,attachments{media,target,type},type,source,created_time&limit=100';
 	$scope.fburl = 'https://graph.facebook.com/v2.10/'+$scope.gid+'/feed'+$scope.qs+'&access_token='+$scope.at;
 	$scope.identifier= 'com.codingsips.gags';
@@ -78,9 +78,7 @@ app.controller('myCtrl', function ($scope,$http,$location,$route,$routeParams) {
 	}
 		
 	$scope.$on('$routeChangeStart', function(event, next, current){
-		if(next.templateUrl == 'views/videos.html'){
-			//$scope.getVideos(next.params.offset,next.params.limit);
-		}else if(next.templateUrl == 'views/video.html'){
+		if(next.templateUrl == 'views/video.html'){
 			$scope.vindex = next.params.vindex;
 			$scope.video = $scope.videos[next.params.vindex];			
 		}
@@ -93,8 +91,6 @@ app.controller('myCtrl', function ($scope,$http,$location,$route,$routeParams) {
 			$('#myCarousel').carousel({
 				interval: 2000
 			});
-		}else if($route.current.loadedTemplateUrl == 'views/video.html'){
-			$scope.getVframe($scope.video.vid,$routeParams.vindex,-1);			
 		}
 		window.scrollTo(0, 0);//on view change scroll to top
 		$scope.intad();	
@@ -132,11 +128,11 @@ app.controller('myCtrl', function ($scope,$http,$location,$route,$routeParams) {
 	$scope.intad = function(){
 		$scope.adCounter++;
 		if($scope.adCounter==2){
-			//if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
+			if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 		}
 		if($scope.adCounter>9){
 			$scope.adCounter=0;
-			//if(AdMob) AdMob.showInterstitial();			
+			if(AdMob) AdMob.showInterstitial();			
 		}
 	}
 	
