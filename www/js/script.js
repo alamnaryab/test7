@@ -96,8 +96,7 @@ app.controller('myCtrl', function ($scope,$http,$location,$route,$routeParams) {
 			});
 		}
 		window.scrollTo(0, 0);//on view change scroll to top
-		//$scope.intad();	
-		
+		$scope.intad();			
 	});
 	
 	$scope.videoNavs = function(){
