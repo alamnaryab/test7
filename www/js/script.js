@@ -22,7 +22,7 @@ app.controller('myCtrl', function ($scope,$http,$location,$route,$routeParams) {
     //set loading variable (is ajax running?)
 	$scope.at = 'EAABmSZBW6IbkBAPWVQOr9hwgrWxaObgOvqFUJYKoELeUg8MZCmVFlvQP4rnF2vay3BQM9wzUXTjkbQ4Ri5VdunhMscvr19vmUCYkqtLsPXEuYlwuqtrf729CFaLB4iknNlNm4UpdUwrmfNMOv61gsy32uPBS8ZD';
 	$scope.gid = '810517042300154';
-	$scope.qs = '?fields=message,attachments{media,target,type},type,source,created_time&limit=100';
+	$scope.qs = '?fields=message,attachments{media,target,type},type,source,created_time&limit=20';
 	$scope.fburl = 'https://graph.facebook.com/v2.10/'+$scope.gid+'/feed'+$scope.qs+'&access_token='+$scope.at;
 	$scope.identifier= 'com.codingsips.gags';
 	$scope.about 	= dbGet('about');
