@@ -66,12 +66,14 @@ app.controller('myCtrl', function ($scope,$http,$location,$route,$routeParams) {
 				if(msg == ''){
 					msg = 'Untitled';
 				}
-				$scope.tmp_videos.push({
-					'vframe': '<iframe src="'+d.source+'&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>',
-					'title':msg,
-					'vthumb':d.attachments.data[0].media.image.src,
-					'date':d.created_time.substring(0,10),
-				});
+				if(typeof d.attachments.data.type !== 'undefined' && d.attachments.data.type!='video_share_youtube'){
+					$scope.tmp_videos.push({
+						'vframe': '<iframe src="'+d.source+'&showinfo=0&rel=0" frameborder="0" allowfullscreen></iframe>',
+						'title':msg,
+						'vthumb':d.attachments.data[0].media.image.src,
+						'date':d.created_time.substring(0,10),
+					});
+				}
 			}
 		});
 		return true;
